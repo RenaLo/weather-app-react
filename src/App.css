@@ -1,3 +1,24 @@
 .App {
+  font-family: Playfair Display;
+  font-weight: bolder;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 15px;
   text-align: center;
+}
+
+.App .overview {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  opacity: 0.75;
+  border: 2px solid #273342;
+  border-radius: 4px;
+  text-align: center;
+  margin: 8px auto;
+  padding: 10px 30px 30px;
+}
+
+.App ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
 }

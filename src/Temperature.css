@@ -1,0 +1,8 @@
+.Temperature {
+  padding: 45px 20px 0;
+  line-height: 1;
+}
+
+.Temperature .tempUnit {
+  font-size: 16px;
+}

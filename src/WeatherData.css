@@ -1,0 +1,14 @@
+.WeatherData .description {
+  line-height: 2;
+  padding: 30px 20px 0;
+}
+
+.WeatherData .description .iconDescription {
+  font-size: 35px;
+}
+
+.WeatherData .icon {
+  color: #606368;
+  font-size: 70px;
+  padding: 30px 20px 0;
+}

@@ -1,0 +1,21 @@
+.CityData .city {
+  font-size: 75px;
+  font-weight: bolder;
+  line-height: 1;
+  padding-top: 25px;
+}
+
+.CityData .date {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+  top: 8px;
+}
+
+.CityData .time {
+  font-size: 45px;
+  text-align: right;
+  position: relative;
+  right: 20px;
+}
