@@ -1,35 +1,42 @@
 import React from "react";
-import Temperature from "./Temperature";
 import "./WeatherData.css";
 
-export default function WeatherData() {
-  let weatherData = {
-    wind: 6,
-    humidity: 80,
-  };
+export default function WeatherData(props) {
   return (
     <div className="WeatherData row">
-      <Temperature />
-      <div className="col icon">
-        <i className="far fa-snowflake"></i>
-      </div>
-      <div className="col description ">
+      <div className="col temperature">
         <ul>
           <li>
-            <h1 className="iconDescription">Snow</h1>
+            {props.data.maxTemp}° / {props.data.minTemp}°
           </li>
           <li>
-            <div className="humidity">
-              <span role="img" aria-label="Humidity">
+            <h1>
+              {props.data.currentTemp}
+              <sup className="tempUnit">° C | ° F</sup>
+            </h1>
+          </li>
+          <li>Real feel: {props.data.realFeel}°</li>
+        </ul>
+      </div>
+      <div className="col icon">
+        <img src={props.data.icon} alt="icon" width="120"></img>
+      </div>
+      <div className="col description">
+        <ul>
+          <li>
+            <h3>{props.data.description}</h3>
+          </li>
+          <li>
+            <div>
+              <span role="img" aria-label="humidity">
                 💧
               </span>
-              Humidity: {weatherData.value}%
+              Humidity: {props.data.humidiy}%
             </div>
           </li>
           <li>
             <div className="wind">
-              {" "}
-              <i className="fas fa-wind"></i> Wind: {weatherData.value}km/h
+              <i className="fas fa-wind"></i> Wind: {props.data.wind}km/h
             </div>
           </li>
         </ul>

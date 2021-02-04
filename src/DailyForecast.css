@@ -1,0 +1,12 @@
+.DailyForecast {
+  margin: 0 auto;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  border: 2px solid #273342;
+  border-radius: 4px;
+  padding-top: 10px;
+  opacity: 0.8;
+}
+
+.DailyForecast ul {
+  list-style: none;
+}

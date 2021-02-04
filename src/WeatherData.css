@@ -1,14 +1,25 @@
+.WeatherData ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .WeatherData .description {
   line-height: 2;
   padding: 30px 20px 0;
 }
 
-.WeatherData .description .iconDescription {
-  font-size: 35px;
-}
-
 .WeatherData .icon {
   color: #606368;
-  font-size: 70px;
-  padding: 30px 20px 0;
+  font-size: 60px;
+  padding: 15px 15px 0;
+}
+
+.WeatherData .temperature {
+  padding: 45px 20px 0;
+  line-height: 1.1;
+}
+
+.WeatherData .temperature .tempUnit {
+  font-size: 16px;
 }
