@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="Footer">
       <a
-        href="https://github.com/RenaLo/Weather-App"
+        href="https://github.com/RenaLo/weather-app-react"
         target="_blank"
         rel="noreferrer"
         className="Link"
