@@ -1,14 +1,17 @@
+.Search {
+  color: #1abde6;
+  background: #282c34;
+}
 .Search .engine {
-  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   opacity: 0.75;
   border: 2px solid #273342;
   border-radius: 4px;
   margin: 8px auto;
-  padding: 10px 10px 5px;
+  padding: 15px 10px 5px;
 }
 
 .Search .overview {
-  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background: #282c34;
   opacity: 0.75;
   border: 2px solid #273342;
   border-radius: 4px;
@@ -20,6 +23,7 @@
 .Search .btn-outline-dark {
   border: 3px solid #273342;
   border-radius: 4px;
+  color: #1abde6;
   font-size: 20px;
   text-align: center;
   padding: 1px 6px;
@@ -29,6 +33,7 @@
 .Search .city-input {
   background: transparent;
   border: 3px solid #273342;
+  color: #1abde6;
   border-radius: 4px;
   font-size: 20px;
   text-align: center;
