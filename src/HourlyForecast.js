@@ -1,56 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import HourlyForecastPreview from "./HourlyForecastPreview";
+
 import "./HourlyForecast.css";
 
-export default function HourlyForecast() {
-  return (
-    <div className="HourlyForecast">
-      <div className="row">
-        <ul className="col">
-          <li>6°C</li>
-          <li>
-            <i className="fas fa-cloud"></i>
-          </li>
-          <li>22:00</li>
-        </ul>
+export default function HourlyForecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [hourlyForecast, setHourlyForecast] = useState(null);
 
-        <ul className="col">
-          <li>5°C</li>
-          <li>
-            <i className="fas fa-cloud"></i>
-          </li>
-          <li>01:00</li>
-        </ul>
+  function handleDailyForecastResponse(response) {
+    setHourlyForecast(response.data);
+    setLoaded(true);
+  }
 
-        <ul className="col">
-          <li>5°C</li>
-          <li>
-            <i className="fas fa-cloud-rain"></i>
-          </li>
-          <li>04:00</li>
-        </ul>
-
-        <ul className="col">
-          <li>4°C</li>
-          <li>
-            <i className="far fa-snowflake"></i>
-          </li>
-          <li>07:00</li>
-        </ul>
-        <ul className="col">
-          <li>6°C</li>
-          <li>
-            <i className="fas fa-cloud"></i>
-          </li>
-          <li>10:00</li>
-        </ul>
-        <ul className="col">
-          <li>8°C</li>
-          <li>
-            <i className="fas fa-cloud"></i>
-          </li>
-          <li>13:00</li>
-        </ul>
+  if (loaded && props.city === hourlyForecast.city.name) {
+    return (
+      <div className="HourlyForecast">
+        <div className="row">
+          {hourlyForecast.list.slice(0, 5).map(function (forecastItem) {
+            return <HourlyForecastPreview data={forecastItem} />;
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "0c0b6e7ec3cec2bccfeccef145911340";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleDailyForecastResponse);
+    return null;
+  }
 }

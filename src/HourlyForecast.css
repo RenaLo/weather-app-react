@@ -1,8 +1,16 @@
 .HourlyForecast {
-  padding-top: 5px;
-  border-top: 2px solid #273342;
+  padding-top: 10px;
+  border-top: 1px solid #273342;
+  font-size: 14px;
 }
 
 .HourlyForecast ul {
   list-style: none;
+}
+
+.HourlyForecast .icon {
+  display: block;
+  margin: 0 auto;
+  height: 45px;
+  width: 45px;
 }

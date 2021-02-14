@@ -53,8 +53,8 @@ export default function Temperature(props) {
             <h1>
               {Math.round(currentTemp)}
               <sup className="tempUnit">
+                {"  "}
                 <a href="#" onClick={showCelsius}>
-                  {"  "}
                   °C {"  "}
                 </a>
                 | {"  "}°F
