@@ -11,9 +11,7 @@
 }
 
 .WeatherData .icon {
-  color: #606368;
-  font-size: 60px;
-  padding: 15px 15px 0;
+  padding: 60px 15px 0;
 }
 
 .WeatherData .temperature {
