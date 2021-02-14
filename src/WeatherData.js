@@ -1,4 +1,5 @@
 import React from "react";
+import Temperature from "./Temperature";
 import WeatherIcons from "./WeatherIcons";
 import "./WeatherData.css";
 
@@ -6,18 +7,12 @@ export default function WeatherData(props) {
   return (
     <div className="WeatherData row">
       <div className="col temperature">
-        <ul>
-          <li>
-            {props.data.maxTemp}° / {props.data.minTemp}°
-          </li>
-          <li>
-            <h1>
-              {props.data.currentTemp}
-              <sup className="tempUnit">° C | ° F</sup>
-            </h1>
-          </li>
-          <li>Real feel: {props.data.realFeel}°</li>
-        </ul>
+        <Temperature
+          celsius={props.data.currentTemp}
+          maxTempCelsius={props.data.maxTemp}
+          minTempCelsius={props.data.minTemp}
+          realFeelCelsius={props.data.minTemp}
+        />
       </div>
       <div className="col">
         <ul>
