@@ -21,7 +21,7 @@ export default function WeatherIcons(props) {
     "50d": "https://ssl.gstatic.com/onebox/weather/48/fog.png",
     "50n": "https://ssl.gstatic.com/onebox/weather/48/fog.png",
   };
-  let forecastIcon = codeMapping[props.code];
+  let weatherIcon = codeMapping[props.code];
 
-  return <img src={forecastIcon} alt="Icon" />;
+  return <img src={weatherIcon} alt="Icon" className="icon" />;
 }

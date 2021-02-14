@@ -7,16 +7,18 @@
 
 .WeatherData .description {
   line-height: 2;
-  padding: 30px 20px 0;
+  padding: 55px 20px 0;
 }
 
 .WeatherData .icon {
-  padding: 60px 15px 0;
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
 }
 
 .WeatherData .temperature {
   padding: 45px 20px 0;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
 .WeatherData .temperature .tempUnit {

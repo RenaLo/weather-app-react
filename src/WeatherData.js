@@ -19,14 +19,16 @@ export default function WeatherData(props) {
           <li>Real feel: {props.data.realFeel}°</li>
         </ul>
       </div>
-      <div className="col icon">
-        <WeatherIcons code={props.data.icon} alt="Icon" />
+      <div className="col">
+        <ul>
+          <li>
+            <WeatherIcons code={props.data.icon} />
+          </li>
+          <li>{props.data.description}</li>
+        </ul>
       </div>
       <div className="col description">
         <ul>
-          <li>
-            <h3>{props.data.description}</h3>
-          </li>
           <li>
             <div>
               <span role="img" aria-label="humidity">
