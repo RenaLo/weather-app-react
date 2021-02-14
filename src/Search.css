@@ -10,7 +10,6 @@
 .Search .overview {
   color: #282c34;
   background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-
   border: 2px solid #273342;
   border-radius: 4px;
   text-align: center;
@@ -40,6 +39,7 @@
 
 .Search .btn-outline-dark:hover {
   background-color: #386197;
+  color: #fff;
 }
 
 .Search .search-button {

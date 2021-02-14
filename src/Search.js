@@ -3,6 +3,7 @@ import axios from "axios";
 import WeatherData from "./WeatherData";
 import CityData from "./CityData";
 import HourlyForecast from "./HourlyForecast";
+import Loader from "react-loader-spinner";
 import "./Search.css";
 
 export default function Search(props) {
@@ -39,9 +40,23 @@ export default function Search(props) {
     setCity(event.target.value);
   }
 
+  function showLocation(position) {
+    const apiKey = "0c0b6e7ec3cec2bccfeccef145911340";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
+  function updateLocation() {
+    navigator.geolocation.getCurrentPosition(showLocation);
+  }
+
   let form = (
     <form className="engine" onSubmit={handleSubmit}>
-      <button type="button" className="btn btn-outline-dark">
+      <button
+        type="button"
+        className="btn btn-outline-dark"
+        onClick={updateLocation}
+      >
         <i className="fas fa-location-arrow"></i>
       </button>
 
@@ -64,14 +79,7 @@ export default function Search(props) {
       <div className="Search">
         {form}
         <div className="overview">
-          <CityData
-            city={weather.city}
-            weekday={"Friday"}
-            month={"January"}
-            day={13}
-            hour={18}
-            minutes={30}
-          />
+          <CityData city={weather.city} />
           <WeatherData data={weather} />
           <br />
           <HourlyForecast />
@@ -80,6 +88,6 @@ export default function Search(props) {
     );
   } else {
     searchCity();
-    return "Loading...";
+    return <Loader type="ThreeDots" color="#fda085" height={500} width={500} />;
   }
 }
