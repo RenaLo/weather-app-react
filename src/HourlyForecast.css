@@ -1,7 +1,6 @@
 .HourlyForecast {
-  padding-top: 10px;
+  padding-top: 20px;
   border-top: 1px solid #273342;
-  font-size: 14px;
 }
 
 .HourlyForecast ul {
@@ -13,4 +12,8 @@
   margin: 0 auto;
   height: 45px;
   width: 45px;
+}
+
+.HourlyForecast .unit {
+  font-size: 14px;
 }
