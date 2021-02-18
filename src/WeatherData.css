@@ -24,3 +24,7 @@
 .WeatherData .temperature .tempUnit {
   font-size: 16px;
 }
+
+.WeatherData .temperature .tempUnit:hover {
+  cursor: pointer;
+}

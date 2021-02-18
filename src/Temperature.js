@@ -26,10 +26,7 @@ export default function Temperature(props) {
               <sup className="tempUnit">
                 {"  "}
                 °C |{"  "}
-                <a href="#" onClick={showFahrenheit}>
-                  {" "}
-                  °F
-                </a>
+                <span onClick={showFahrenheit}> °F</span>
               </sup>
             </h1>
           </li>
@@ -54,10 +51,7 @@ export default function Temperature(props) {
               {Math.round(currentTemp)}
               <sup className="tempUnit">
                 {"  "}
-                <a href="#" onClick={showCelsius}>
-                  °C {"  "}
-                </a>
-                | {"  "}°F
+                <span onClick={showCelsius}> °C </span> | {"  "}°F
               </sup>
             </h1>
           </li>
