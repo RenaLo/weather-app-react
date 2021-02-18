@@ -9,12 +9,13 @@ import "./Search.css";
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ loaded: false });
+  const [unit, setUnit] = useState("celsius");
 
   function displayWeather(response) {
     setWeather({
       loaded: true,
       city: response.data.name,
-      currentTemp: Math.round(response.data.main.temp),
+      celsiusTemp: Math.round(response.data.main.temp),
       minTemp: Math.round(response.data.main.temp_min),
       maxTemp: Math.round(response.data.main.temp_max),
       realFeel: Math.round(response.data.main.feels_like),
@@ -50,39 +51,49 @@ export default function Search(props) {
     navigator.geolocation.getCurrentPosition(showLocation);
   }
 
-  let form = (
-    <form className="engine" onSubmit={handleSubmit}>
-      <button
-        type="button"
-        className="btn btn-outline-dark"
-        onClick={updateLocation}
-      >
-        <i className="fas fa-location-arrow"></i>
-      </button>
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("fahrenheit");
+  }
 
-      <input
-        className="city-input"
-        type="text"
-        placeholder="Enter city name..."
-        autoFocus="on"
-        autoComplete="off"
-        onChange={updateCity}
-      />
-      <button type="submit" className="btn btn-outline-dark search-button">
-        <i className="fas fa-search"></i>
-      </button>
-    </form>
-  );
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
+  }
 
   if (weather.loaded) {
     return (
       <div className="Search">
-        {form}
+        <form className="engine" onSubmit={handleSubmit}>
+          <span className="tempUnit">
+            <span onClick={showCelsius}>C</span> |{" "}
+            <span onClick={showFahrenheit}>F</span>
+          </span>
+          <button
+            type="button"
+            className="btn btn-outline-dark"
+            onClick={updateLocation}
+          >
+            <i className="fas fa-location-arrow"></i>
+          </button>
+          <input
+            className="city-input"
+            type="text"
+            placeholder="Enter city name..."
+            autoFocus="on"
+            autoComplete="off"
+            onChange={updateCity}
+          />
+          <button type="submit" className="btn btn-outline-dark search-button">
+            <i className="fas fa-search"></i>
+          </button>
+        </form>
+
         <div className="overview">
           <CityData city={weather.city} />
-          <WeatherData data={weather} />
+          <WeatherData data={weather} unit={unit} />
           <br />
-          <HourlyForecast city={weather.city} />
+          <HourlyForecast city={weather.city} unit={unit} />
         </div>
       </div>
     );

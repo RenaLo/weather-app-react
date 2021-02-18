@@ -18,7 +18,9 @@ export default function HourlyForecast(props) {
       <div className="HourlyForecast">
         <div className="row">
           {hourlyForecast.list.slice(0, 5).map(function (forecastItem) {
-            return <HourlyForecastPreview data={forecastItem} />;
+            return (
+              <HourlyForecastPreview data={forecastItem} unit={props.unit} />
+            );
           })}
         </div>
       </div>
