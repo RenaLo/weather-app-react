@@ -18,7 +18,7 @@
 }
 
 .Search .btn-outline-dark {
-  border: 3px solid #273342;
+  border: 2px solid #273342;
   border-radius: 4px;
   color: #282c34;
   font-size: 20px;
@@ -28,8 +28,7 @@
 }
 
 .Search .city-input {
-  background: transparent;
-  border: 3px solid #273342;
+  background: 2px solid #273342;
   color: #282c34;
   border-radius: 4px;
   font-size: 20px;
@@ -43,10 +42,10 @@
 
 .Search .engine .tempUnit {
   background: transparent;
-  border: 3px solid #273342;
+  border: 2px solid #273342;
   color: #282c34;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   padding: 1px 6px;
 }
